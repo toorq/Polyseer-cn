@@ -44,7 +44,7 @@ The system uses multiple AI agents to research both sides of a question, then ag
 - Both sides research to avoid confirmation bias
 - Real-time data, not stale information
 
-Built for developers, researchers, and anyone who wants rigorous analysis instead of speculation.
+Built for developers, researchers and anyone who wants rigorous analysis instead of speculation.
 
 ---
 

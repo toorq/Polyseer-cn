@@ -205,7 +205,7 @@ Each piece of evidence receives an influence score based on:
 ## Technology Stack
 
 ### Frontend
-- **Next.js 15.5** - React framework with Turbopack
+- **Next.js 16** - React framework with Turbopack
 - **Tailwind CSS 4** - Utility-first styling
 - **Framer Motion** - Smooth animations
 - **Radix UI** - Accessible components
@@ -213,7 +213,7 @@ Each piece of evidence receives an influence score based on:
 
 ### Backend & APIs
 - **AI SDK** - LLM orchestration
-- **GPT-5** - Advanced reasoning model
+- **GPT-4o / GPT-5** - Advanced reasoning models
 - **Valyu API** - Search and research capabilities
 - **Polymarket API** - Market data fetching
 - **Kalshi API** - Market data fetching
@@ -236,7 +236,7 @@ Each piece of evidence receives an influence score based on:
 
 - **Node.js 18+**
 - **npm/pnpm/yarn**
-- **OpenAI API key** - For GPT-5 access
+- **OpenAI API key** - For GPT-4o / GPT-5 access
 - **Valyu API key** - For search capabilities (get at [platform.valyu.ai](https://platform.valyu.ai))
 
 ### 1. Clone the Repository
@@ -429,7 +429,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Powered By
 - **valyuAI**: Real-time search API
-- **OpenAI GPT-5**: Advanced reasoning capabilities
+- **OpenAI GPT-4o / GPT-5**: Advanced reasoning capabilities
 - **Polymarket**: Prediction market data
 - **Kalshi**: Prediction market data
 

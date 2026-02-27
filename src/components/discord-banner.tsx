@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const MIGRATION_STORAGE_KEY = 'polyseer-migration-banner-dismissed';
 const DISCORD_STORAGE_KEY = 'polyseer-discord-banner-dismissed';
 
 function DiscordIcon({ className }: { className?: string }) {
@@ -14,7 +13,7 @@ function DiscordIcon({ className }: { className?: string }) {
   );
 }
 
-export function MigrationBanner() {
+export function DiscordBanner() {
   const [showDiscord, setShowDiscord] = useState(false);
 
   useEffect(() => {

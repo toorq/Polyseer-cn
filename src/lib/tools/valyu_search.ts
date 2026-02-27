@@ -12,12 +12,10 @@ let currentValyuContext: { accessToken?: string } = {};
 
 export function setValyuContext(accessToken?: string) {
   currentValyuContext = { accessToken };
-  console.log(`[ValyuContext] Set access token: ${accessToken ? 'present' : 'none'}`);
 }
 
 export function clearValyuContext() {
   currentValyuContext = {};
-  console.log('[ValyuContext] Cleared');
 }
 
 export function getValyuAccessToken(): string | undefined {

@@ -42,9 +42,6 @@ export function ConnectPolymarket() {
         return
       }
       
-      console.log('Available connectors:', connectors.map(c => ({ id: c.id, name: c.name })))
-      console.log('Using connector:', { id: metaMaskConnector.id, name: metaMaskConnector.name })
-      
       await connect({ connector: metaMaskConnector })
       
     } catch (error) {

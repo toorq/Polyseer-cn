@@ -48,7 +48,7 @@ CRITICAL ANALYSIS TASKS:
 
 FOLLOW-UP SEARCH GUIDELINES:
 - Target specific gaps in evidence coverage
-- Add temporal constraints: include "2025" or "recent" for current events
+- Add temporal constraints: include "2026" or "recent" for current events
 - DO NOT prefix queries with outlet names (e.g., "Reuters ", "Bloomberg ", "WSJ ")
 - Avoid restrictive site: searches for government domains (whitehouse.gov, congress.gov) - they rarely yield results
 - Use broad natural-language keywords tied to the entities and mechanisms in question

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/utils/supabase/server';
+import { isSelfHostedMode } from '@/lib/local-db/local-auth';
 
 interface PolymarketMarket {
   id: string;
@@ -25,6 +26,11 @@ interface FeaturedMarket {
 
 export async function GET(request: NextRequest) {
   try {
+    // Self-hosted mode uses local SQLite — cron updates are not applicable
+    if (isSelfHostedMode()) {
+      return NextResponse.json({ success: true, skipped: true, reason: 'self-hosted mode' });
+    }
+
     // Verify request is from Vercel cron
     const userAgent = request.headers.get('user-agent');
     if (userAgent !== 'vercel-cron/1.0') {

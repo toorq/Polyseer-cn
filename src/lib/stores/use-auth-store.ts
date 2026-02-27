@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 import { createClient } from '@/utils/supabase/client'
-import type { User } from '@supabase/supabase-js'
+import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js'
 import {
   buildAuthorizationUrl,
   saveValyuTokens,
@@ -348,6 +348,12 @@ export const useAuthStore = create<AuthStore>()(
         // Mark as initialized
         set({ initialized: true })
 
+        // In self-hosted mode, skip Supabase auth entirely
+        if (process.env.NEXT_PUBLIC_APP_MODE !== 'valyu') {
+          set({ loading: false, user: null })
+          return
+        }
+
         console.log('[Initialize] Starting auth initialization')
 
         const supabase = createClient()
@@ -376,7 +382,7 @@ export const useAuthStore = create<AuthStore>()(
         // Listen for auth changes
         const {
           data: { subscription },
-        } = supabase.auth.onAuthStateChange(async (event, session) => {
+        } = supabase.auth.onAuthStateChange(async (event: AuthChangeEvent, session: Session | null) => {
           console.log('[Auth State Change]', event, session?.user?.email)
 
           // Clear timeout since we got an auth update
@@ -423,7 +429,7 @@ export const useAuthStore = create<AuthStore>()(
         })
 
         // Trigger initial check
-        supabase.auth.getSession().then(({ data: { session } }) => {
+        supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
           if (session) {
             console.log('[Initialize] Found existing session, triggering auth state change')
             // The onAuthStateChange handler will handle this

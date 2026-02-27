@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const MIGRATION_STORAGE_KEY = 'polyseer-migration-banner-dismissed';
 const DISCORD_STORAGE_KEY = 'polyseer-discord-banner-dismissed';
 
 function DiscordIcon({ className }: { className?: string }) {
@@ -14,7 +13,7 @@ function DiscordIcon({ className }: { className?: string }) {
   );
 }
 
-export function MigrationBanner() {
+export function DiscordBanner() {
   const [showDiscord, setShowDiscord] = useState(false);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export function MigrationBanner() {
       <div className="fixed bottom-4 left-4 z-50 animate-in slide-in-from-left duration-300">
         <div className="bg-[#5865F2] text-white rounded-full px-3 py-1.5 shadow-lg flex items-center gap-2">
           <a
-            href="https://discord.gg/BhUWrFbHRa"
+            href="https://discord.gg/9fdgEmUE23"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs font-medium hover:underline"

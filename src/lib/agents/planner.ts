@@ -1,9 +1,6 @@
 import { generateObject } from 'ai';
 import { z } from 'zod';
-import { openai } from '@ai-sdk/openai';
-
-// Model helper
-const getModel = () => openai('gpt-4o');
+import { getModel } from '../llm';
 
 export const PlanSchema = z.object({
   subclaims: z.array(z.string().min(5)).min(2).max(10).describe('Causal factors and pathways that could lead to the outcome'),

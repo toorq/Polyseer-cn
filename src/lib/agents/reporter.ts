@@ -1,9 +1,6 @@
 import { generateText } from 'ai';
-import { openai } from '@ai-sdk/openai';
 import { InfluenceItem, ClusterMeta, Evidence } from '../forecasting/types';
-
-// Model helper
-const getModel = () => openai('gpt-4o-mini');
+import { getModelSmall } from '../llm';
 
 export async function reporterAgent(
   question: string,
@@ -107,7 +104,7 @@ STYLE:
 `;
 
   const { text } = await generateText({
-    model: getModel(),
+    model: getModelSmall(),
     system: `Write clean, skimmable Markdown only.`,
     prompt,
   });

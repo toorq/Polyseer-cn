@@ -213,7 +213,8 @@ Each piece of evidence receives an influence score based on:
 
 ### Backend & APIs
 - **AI SDK** - LLM orchestration
-- **GPT-4o / GPT-5** - Advanced reasoning models
+- **GPT-4o / GPT-5** - Advanced reasoning models (OpenAI)
+- **Doubao Seed 2.0** - Chinese large language model support (Volcengine Ark)
 - **Valyu API** - Search and research capabilities
 - **Polymarket API** - Market data fetching
 - **Kalshi API** - Market data fetching
@@ -260,6 +261,7 @@ Create `.env.local` with your configuration:
 
 #### Self-Hosted Mode (Recommended)
 
+**Using OpenAI (default):**
 ```env
 # ===========================================
 # Self-Hosted Mode Configuration
@@ -275,6 +277,29 @@ VALYU_API_KEY=valyu_your_api_key_here
 
 # Get your OpenAI API key at: https://platform.openai.com
 OPENAI_API_KEY=sk-your_openai_api_key_here
+```
+
+**Using Volcengine Doubao (Chinese LLM / 国产大语言模型):**
+```env
+# ===========================================
+# Self-Hosted Mode Configuration
+# ===========================================
+NEXT_PUBLIC_APP_MODE=self-hosted
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+LLM_PROVIDER=volc
+
+# ===========================================
+# Required API Keys
+# ===========================================
+# Get your Valyu API key at: https://platform.valyu.ai
+VALYU_API_KEY=valyu_your_api_key_here
+
+# Volcengine Ark (Doubao) Configuration
+# Get your access key at: https://console.volcengine.com/ark/
+VOLC_AK=your-volcengine-access-key
+VOLC_BASE_URL=https://ark.cn-beijing.volces.com/api/v3/
+VOLC_MODEL=doubao-seed-2.0-code
+# VOLC_MODEL_SMALL=doubao-seed-2.0-code (optional)
 ```
 
 That's it! Self-hosted mode uses a local SQLite database that's automatically created.
